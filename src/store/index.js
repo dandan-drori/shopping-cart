@@ -28,7 +28,9 @@ export default new Vuex.Store({
 				product.quantity = 1
 				state.cart.unshift(product)
 			} else {
-				state.cart[idx].quantity++
+				const updatedProduct = state.cart[idx]
+				updatedProduct.quantity++
+				state.cart.splice(idx, 1, updatedProduct)
 			}
 		},
 		nextPage(state) {
