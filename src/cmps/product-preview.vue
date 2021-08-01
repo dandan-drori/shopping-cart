@@ -4,7 +4,7 @@
 		<h2>{{ product.heading }}</h2>
 		<small>${{ product.price }}</small>
 		<p v-if="isCart">Quantity: {{ product.quantity }}</p>
-		<button @click="addToCart">Add To Cart</button>
+		<button @click="addToCart" v-if="!isCart">Add To Cart</button>
 	</section>
 </template>
 

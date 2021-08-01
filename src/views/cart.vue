@@ -1,11 +1,14 @@
 <template>
-	<div class="cart">
-		<product-preview
-			v-for="product in cart"
-			:key="product._id"
-			:product="product"
-			:is-cart="true"
-		/>
+	<div class="cart-container">
+		<div class="cart">
+			<product-preview
+				v-for="product in cart"
+				:key="product._id"
+				:product="product"
+				:is-cart="true"
+			/>
+		</div>
+		<div class="total">Total: ${{ total }}</div>
 	</div>
 </template>
 
@@ -16,6 +19,11 @@ export default {
 	computed: {
 		cart() {
 			return this.$store.getters.cart
+		},
+		total() {
+			return this.cart.reduce((acc, product) => {
+				return acc + product.price * product.quantity
+			}, 0)
 		},
 	},
 }

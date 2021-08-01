@@ -10,6 +10,27 @@ img {
 	object-fit: contain;
 }
 
+.header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 15px 30px;
+
+	.nav {
+		display: flex;
+		gap: 7px;
+
+		a {
+			font-weight: bold;
+			color: #2c3e50;
+
+			&.router-link-exact-active {
+				color: #3e58d5;
+			}
+		}
+	}
+}
+
 .product-list {
 	display: flex;
 	justify-content: center;
@@ -56,5 +77,18 @@ img {
 
 	button {
 		padding: 3px 7px;
+	}
+}
+
+.cart-container {
+	padding-bottom: 100px;
+	.cart {
+		display: flex;
+		justify-content: center;
+		margin: 0 auto;
+		width: 800px;
+		flex-wrap: wrap;
+		padding: 20px;
+		gap: 15px;
 	}
 }
